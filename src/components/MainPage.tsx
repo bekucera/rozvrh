@@ -4,6 +4,7 @@ import Timetable from "../models/Timetable.ts";
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
 import NoSleep from 'nosleep.js';
+import WholeTimetableLink from "./WholeTimetableLink.tsx";
 
 interface Props {
     isQueryLoading: boolean;
@@ -34,7 +35,10 @@ function MainPage(props: Props) {
                     props.isQueryLoading ? (<p>Načítání...</p>
                     ) : props.isQueryError ? (<p>Rozvrh se nepodařilo načíst.</p>
                     ) : props.timetable === null ? (<p>Zvolte školu, třídu a skupiny v nastavení.</p>
-                    ) : <TimetableInfo {...props} timetable={props.timetable}/>
+                    ) : <div className="d-flex flex-column gap-4 align-items-center">
+                        <TimetableInfo {...props} timetable={props.timetable}/>
+                        <WholeTimetableLink timetable={props.timetable}/>
+                    </div>
                 }
             </div>
             <Button variant="outline-secondary" href="https://github.com/matous-volf/rozvrh" target="_blank">
