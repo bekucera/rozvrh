@@ -1,3 +1,16 @@
 input.rbt-input-hint {
     color: transparent !important;
 }
+
+.delta-timetable-logo {
+    height: 2rem;
+    transition-duration: 0.15s;
+}
+
+.btn > .delta-timetable-logo {
+    filter: invert(48%) sepia(9%) saturate(435%) hue-rotate(167deg) brightness(90%) contrast(86%);
+}
+
+.btn:hover > .delta-timetable-logo {
+    filter: none;
+}
