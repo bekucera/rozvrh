@@ -114,7 +114,7 @@ export async function getTimetable(school: School, classId: string, selectedGrou
 
     const hourTimes = createHourTimes(currentHtml);
 
-    return new Timetable(daysCurrent, groupGroups, hourTimes);
+    return new Timetable(daysCurrent, groupGroups, hourTimes, currentUrl);
 }
 
 function createDays(html: string, selectedGroupIds: string[]): Day[] {
